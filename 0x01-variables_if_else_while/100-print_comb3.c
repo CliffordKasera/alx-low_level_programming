@@ -5,7 +5,6 @@
  *Description: print double digit combos
  *Return: Always 0 (Success)
  **/
-
 int main(void)
 {
 	int i, j;
@@ -20,17 +19,15 @@ int main(void)
 		{
 			putchar(i);
 			putchar(j);
-
-																											if (i < 56 || j < 57)
-																											{
-																												putchar(44);
-																												putchar(32);
-																											}
-																											j++;
-																											}
+			if (i < 56 || j < 57)
+			{
+				putchar(44);
+				putchar(32);
+			}
+			j++;
+		}
 		i++;
 	}
-
 	putchar(10);
 
 	return (0);
