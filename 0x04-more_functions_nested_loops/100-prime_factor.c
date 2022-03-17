@@ -7,22 +7,19 @@
 
 int main(void)
 {
-	long int prime = 612852475143;
-	long int quotient = prime;
-	long int divisor = 2;
+	long num = 612852475143;
+	long divisor = 2;
+	long larg_prim = 0;
 
-	while (quotient != divisor)
+	while (num != 1)
 	{
-		if (quotient % divisor == 0)
+		if (num % divisor == 0)
 		{
-			quotient = quotient / divisor;
+			num = num / divisor;
+			larg_prim = divisor;
 		}
-		else
-		{
-			divisor++;
-		}
+		divisor += 1;
 	}
-	printf("%li\n", quotient);
-
+	printf("%ld\n", larg_prim);
 	return (0);
 }
