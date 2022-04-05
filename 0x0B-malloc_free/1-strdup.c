@@ -23,12 +23,14 @@ char *_strdup(char *str)
 	/*+1 on the size puts the end of string character*/
 	m = malloc(size * sizeof(*str) + 1);
 
-	if (m == 0)
-		return (NULL);
-	else
+	if (m != 0)
 	{
 		for (; i < size; i++)
-		m[i] = str[i];
+			m[i] = str[i];
+	}
+	else
+	{
+		return (NULL);
 	}
 	return (m);
 }
