@@ -16,7 +16,7 @@ unsigned int _strlen(char *s)
 }
 
 /*
- *string_nconcat - concatenates two strings
+ * string_nconcat - concatenates two strings
  * @s1: string 1
  * @s2: string 2
  * @n: first bytes of s2 to be used
