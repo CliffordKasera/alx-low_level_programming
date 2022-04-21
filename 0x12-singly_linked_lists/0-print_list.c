@@ -9,24 +9,15 @@
 
 size_t print_list(const list_t *h)
 {
-	size_t i = 0, len;
-	char *s;
-	const list_t *traverse = h;
+	size_t nbr_nodes = 0;
+	const list_t *current = h;
 
-	while (traverse != NULL)
+	while (current != NULL)
 	{
-		s = traverse->str;
-		if (s == NULL)
-		{
-			printf("[0] (nil)\n");
-			traverse = traverse->next;
-			i++;
-			continue;
-		}
-		len = traverse->len;
-		printf("[%ld] %s\n", len, s);
-		traverse = traverse->next;
-		i++;
+		printf("[%d] %s\n", current->len,
+		current->str != NULL ? current->str : "(nil)");
+		current = current->next;
+		nbr_nodes++;
 	}
-	return (i);
+	return (nbr_nodes);
 }
