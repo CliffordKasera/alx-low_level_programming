@@ -6,7 +6,6 @@ fmt:    db "%s", 10, 0
         extern printf
         global main, _start
 main:
-_start:
         mov esi, msg    ; 64-bit ABI passing order starts w/ edi, esi, ...
         mov edi, fmt    ;
         mov eax, 0      ; printf is varargs, so EAX counts # of non-integer arguments being passed
