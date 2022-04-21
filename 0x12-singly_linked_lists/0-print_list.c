@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * print_list - prints all the elements of a list_t list
+ * print_list - prints all elements of a linked list
  * @h: linked list
- * Return: the number of nodes
+ *
+ * Return: number of nodes
  */
 
 size_t print_list(const list_t *h)
@@ -12,22 +13,12 @@ size_t print_list(const list_t *h)
 	size_t nbr_nodes = 0;
 	const list_t *current = h;
 
-	while (current)
+	while (current != NULL)
 	{
-		if (current->str != NULL)
-		{
-			printf("[%d] %s\n", current->len,
-			current->str);
-			current = current->next;
-			nbr_nodes++;
-		} else
-		{
-			printf("[0] %s\n",
-			"(nil)");
-			current = current->next;
-			nbr_nodes++;
-		}
+		printf("[%d] %s\n", current->len,
+		current->str != NULL ? current->str : "(nill)");
+		current = current->next;
+		nbr_nodes++;
 	}
-
 	return (nbr_nodes);
 }
