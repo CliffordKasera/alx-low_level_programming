@@ -1,6 +1,6 @@
 #include "main.h"
 #include <string.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * add_node_end - add a node at the end of a linked list
