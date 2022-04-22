@@ -1,16 +1,14 @@
-        SECTION .data
-msg:    db "Hello, Holberton", 0
-fmt:    db "%s", 10, 0
+section	.text
+	global	main
 
-        SECTION .text
-        extern printf
-        global main, _start
 main:
-        mov esi, msg    ; 64-bit ABI passing order starts w/ edi, esi, ...
-        mov edi, fmt    ;
-        mov eax, 0      ; printf is varargs, so EAX counts # of non-integer arguments being passed
-        call printf
-
-        mov ebx, 0      ; normal-exit code
-        mov eax, 1      ; process-termination service
-        int 0x80        ; linux kernel service
+	mov eax, 1 ; syscall 1 is write
+	mov edi, 1
+	lea rsi, [hello_text] ;array to write
+	mov edx , 17
+	syscall
+	mov eax , 60
+	xor edi , edi
+	syscall
+section	.data
+	hello_text: db "Hello, Holberton", 0x0a
