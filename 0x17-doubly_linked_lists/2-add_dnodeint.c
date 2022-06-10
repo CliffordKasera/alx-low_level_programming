@@ -7,7 +7,6 @@
  * @n: is an integer representing dlistint_t list data.
  * Return: a pointer to the added element or NULL if failed.
  */
-
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
